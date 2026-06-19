@@ -1,0 +1,397 @@
+/* ============================================
+   IDS CYBER-SENTINEL - FULL WIDTH DARK THEME
+   ============================================ */
+
+/* Reset & Base */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #0a0e14;
+    color: #e7e9ec;
+    font-family: 'JetBrains Mono', 'Segoe UI', monospace;
+    overflow-x: hidden;
+    width: 100vw;
+    min-height: 100vh;
+}
+
+/* App Shell - Full Width Container */
+.app-shell {
+    width: 100vw;
+    min-height: 100vh;
+    padding: 20px 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* ============================================
+   HEADER
+   ============================================ */
+.header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #1f242d;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.brand-icon {
+    width: 42px;
+    height: 42px;
+    background-color: rgba(76, 139, 245, 0.15);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #4c8bf5;
+    font-size: 20px;
+}
+
+.brand-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+    margin: 0;
+}
+
+.brand-subtitle {
+    font-size: 12px;
+    color: #8b94a3;
+    margin: 4px 0 0 0;
+}
+
+.header-status {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.live-indicator {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: rgba(61, 214, 140, 0.1);
+    padding: 6px 14px;
+    border-radius: 20px;
+}
+
+.live-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #3dd68c;
+    border-radius: 50%;
+    animation: pulse-dot 2s infinite;
+}
+
+@keyframes pulse-dot {
+    0% { box-shadow: 0 0 0 0 rgba(61, 214, 140, 0.7); }
+    70% { box-shadow: 0 0 0 8px rgba(61, 214, 140, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(61, 214, 140, 0); }
+}
+
+.live-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: #3dd68c;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.live-clock {
+    font-size: 18px;
+    font-weight: 600;
+    color: #ffffff;
+    font-family: 'JetBrains Mono', monospace;
+    margin: 0;
+    min-width: 80px;
+    text-align: right;
+}
+
+/* ============================================
+   KPI ROW - 4 EQUAL COLUMNS
+   ============================================ */
+.kpi-row {
+    display: flex;
+    width: 100%;
+    gap: 20px;
+}
+
+.kpi-col {
+    flex: 1;
+    min-width: 0;
+}
+
+.kpi-card {
+    background-color: #141820;
+    border: 1px solid #1f242d;
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    height: 100%;
+    transition: border-color 0.3s ease;
+}
+
+.kpi-card:hover {
+    border-color: #2a303c;
+}
+
+.kpi-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    flex-shrink: 0;
+}
+
+.kpi-label {
+    font-size: 11px;
+    color: #8b94a3;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0 0 6px 0;
+    font-weight: 600;
+}
+
+.kpi-value {
+    font-size: 24px;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0;
+    font-family: 'JetBrains Mono', monospace;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* ============================================
+   MAIN ROW - TABLE + CHARTS
+   ============================================ */
+.main-row {
+    display: flex;
+    width: 100%;
+    gap: 20px;
+    flex: 1;
+    min-height: 0;
+}
+
+.col-table {
+    flex: 0 0 60%;
+    min-width: 0;
+}
+
+.col-charts {
+    flex: 0 0 40%;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ============================================
+   PANELS
+   ============================================ */
+.panel {
+    background-color: #141820;
+    border: 1px solid #1f242d;
+    border-radius: 12px;
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* HEADER DU TABLEAU AGRANDI */
+.panel-header {
+    padding: 20px 24px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #8b94a3;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    border-bottom: 1px solid #1f242d;
+    background-color: #141820;
+}
+
+.panel-subheader {
+    padding: 12px 20px 8px 20px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #8b94a3;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    border-top: 1px solid #1f242d;
+}
+
+.panel-body {
+    padding: 0;
+    flex: 1;
+    overflow: auto;
+}
+
+/* ============================================
+   DATA TABLE STYLING
+   ============================================ */
+.dash-table-container {
+    width: 100% !important;
+}
+
+.dash-spreadsheet-container .dash-spreadsheet-inner {
+    background-color: transparent !important;
+    font-family: 'JetBrains Mono', monospace !important;
+}
+
+/* CELLULES AGRANDIES */
+.dash-spreadsheet-container .dash-spreadsheet-inner td {
+    background-color: transparent !important;
+    color: #e7e9ec !important;
+    border: none !important;
+    padding: 14px 18px !important;
+    font-size: 14px !important;
+}
+
+/* HEADER DU TABLEAU AGRANDI */
+.dash-spreadsheet-container .dash-spreadsheet-inner th {
+    background-color: transparent !important;
+    color: #8b94a3 !important;
+    font-weight: 700 !important;
+    border-bottom: 1px solid #1f242d !important;
+    border-top: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    padding: 16px 18px !important;
+    font-size: 13px !important;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* FIX HOVER VISIBILITY */
+.dash-spreadsheet-container .dash-spreadsheet-inner tr:hover td {
+    background-color: rgba(76, 139, 245, 0.12) !important;
+    color: #c53434 !important;
+}
+
+.dash-spreadsheet-container .dash-spreadsheet-inner tr:focus td,
+.dash-spreadsheet-container .dash-spreadsheet-inner tr:active td,
+.dash-spreadsheet-container .dash-spreadsheet-inner tr.selected td,
+.dash-spreadsheet-container .dash-spreadsheet-inner td.focused,
+.dash-spreadsheet-container .dash-spreadsheet-inner tr:focus-within td {
+    background-color: rgba(76, 139, 245, 0.15) !important;
+    color: #ffffff !important;
+}
+
+/* Pagination */
+.dash-table-container .previous-next-container {
+    padding: 10px 15px !important;
+    background-color: transparent !important;
+}
+
+.dash-table-container .previous-next-container button {
+    background-color: #1f242d !important;
+    color: #8b94a3 !important;
+    border: 1px solid #2a303c !important;
+    border-radius: 6px !important;
+    padding: 6px 12px !important;
+    font-family: 'JetBrains Mono', monospace !important;
+}
+
+.dash-table-container .previous-next-container button:hover {
+    background-color: #2a303c !important;
+    color: #e7e9ec !important;
+}
+
+.dash-table-container .current-page-container {
+    color: #e7e9ec !important;
+    font-family: 'JetBrains Mono', monospace !important;
+}
+
+/* ============================================
+   PLOTLY CHARTS DARK MODE
+   ============================================ */
+.js-plotly-plot .plotly .main-svg {
+    background-color: transparent !important;
+}
+
+.js-plotly-plot .plotly .bg {
+    fill: transparent !important;
+}
+
+/* ============================================
+   SCROLLBAR STYLING
+   ============================================ */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0a0e14;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #2a303c;
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #3a4050;
+}
+
+/* ============================================
+   RESPONSIVE ADJUSTMENTS
+   ============================================ */
+@media (max-width: 1200px) {
+    .main-row {
+        flex-direction: column;
+    }
+    
+    .col-table,
+    .col-charts {
+        flex: 0 0 100%;
+        width: 100%;
+    }
+    
+    .kpi-row {
+        flex-wrap: wrap;
+    }
+    
+    .kpi-col {
+        flex: 0 0 calc(50% - 10px);
+    }
+}
+
+@media (max-width: 768px) {
+    .app-shell {
+        padding: 15px;
+    }
+    
+    .kpi-col {
+        flex: 0 0 100%;
+    }
+    
+    .header-row {
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
+    }
+    
+    .header-status {
+        width: 100%;
+        justify-content: space-between;
+    }
+}
